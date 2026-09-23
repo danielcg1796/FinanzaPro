@@ -2261,14 +2261,14 @@ function ChatPanel({ th, mode, messages, loading, prefill, onSend, onClose, voic
 
 function Novedades({ th }) {
   const items = [
-    { icon: ShieldCheck, title: "Guardado automático y persistente", body: "Toda tu información se guarda sola mientras usas la app y nunca se pierde entre sesiones — solo se borra si tú lo haces explícitamente desde Configuración." },
-    { icon: CalendarDays, title: "Navegación por meses", body: "Agregué un selector de mes siempre visible en la parte superior para que revises tu historial mes a mes, manteniendo claro en cuál estás trabajando." },
-    { icon: MessageCircle, title: "Chat con tu asesor financiero IA", body: "El chat usa tus registros reales como contexto y ahora también puede EJECUTAR acciones: si le dices 'registra un gasto de 200 en comida', lo agrega por ti automáticamente." },
-    { icon: Mic, title: "Entrada y salida de voz", body: "Puedes dictar movimientos y preguntas al chat, y pedirle que lea sus respuestas en voz alta. Elegí la Web Speech API nativa del navegador (sin costo, sin librerías extra) porque es la opción más eficiente para logging manos-libres y accesibilidad." },
-    { icon: Upload, title: "Importar y exportar datos reales", body: "Puedes exportar un respaldo completo en JSON, exportar reportes contables en Excel/CSV, e importar movimientos desde archivos CSV o Excel de otras apps." },
-    { icon: Sparkles, title: "Empiezas siempre desde cero", body: "Quité todos los datos de ejemplo: la app arranca vacía con un breve onboarding para que sea 100% tuya desde el primer momento." },
-    { icon: Wallet, title: "Patrimonio neto personal", body: "Agregué una tarjeta que combina tus ahorros en metas menos tus deudas para mostrarte tu patrimonio neto estimado de un vistazo." },
-    { icon: Calculator, title: "Simulador de crédito e inflación", body: "Calculadora para estimar pagos mensuales de préstamos y el impacto de la inflación en tu dinero a futuro." },
+    { icon: "shield-check", title: "Guardado automático y persistente", body: "Toda tu información se guarda sola mientras usas la app y nunca se pierde entre sesiones — solo se borra si tú lo haces explícitamente desde Configuración." },
+    { icon: "calendar-days", title: "Navegación por meses", body: "Agregué un selector de mes siempre visible en la parte superior para que revises tu historial mes a mes, manteniendo claro en cuál estás trabajando." },
+    { icon: "message-circle", title: "Chat con tu asesor financiero IA", body: "El chat usa tus registros reales como contexto y ahora también puede EJECUTAR acciones: si le dices 'registra un gasto de 200 en comida', lo agrega por ti automáticamente." },
+    { icon: "mic", title: "Entrada y salida de voz", body: "Puedes dictar movimientos y preguntas al chat, y pedirle que lea sus respuestas en voz alta. Elegí la Web Speech API nativa del navegador (sin costo, sin librerías extra) porque es la opción más eficiente para logging manos-libres y accesibilidad." },
+    { icon: "upload", title: "Importar y exportar datos reales", body: "Puedes exportar un respaldo completo en JSON, exportar reportes contables en Excel/CSV, e importar movimientos desde archivos CSV o Excel de otras apps." },
+    { icon: "sparkles", title: "Empiezas siempre desde cero", body: "Quité todos los datos de ejemplo: la app arranca vacía con un breve onboarding para que sea 100% tuya desde el primer momento." },
+    { icon: "wallet", title: "Patrimonio neto personal", body: "Agregué una tarjeta que combina tus ahorros en metas menos tus deudas para mostrarte tu patrimonio neto estimado de un vistazo." },
+    { icon: "calculator", title: "Simulador de crédito e inflación", body: "Calculadora para estimar pagos mensuales de préstamos y el impacto de la inflación en tu dinero a futuro." },
   ];
   return (
     <div className="space-y-3">
@@ -2276,13 +2276,19 @@ function Novedades({ th }) {
       {items.map((it, i) => (
         <Card th={th} key={i} className="!py-3">
           <div className="flex gap-3">
-            <div className="w-9 h-9 rounded-2xl flex items-center justify-center shrink-0" style={{ background: `${th.accent}20` }}><it.icon size={16} color={th.accent} /></div>
-            <div><p className="text-[13px] font-semibold" style={{ color: th.text }}>{it.title}</p><p className="text-[12px] mt-0.5 leading-snug" style={{ color: th.textMuted }}>{it.body}</p></div>
+            <div className="w-9 h-9 rounded-2xl flex items-center justify-center shrink-0" style={{ background: `${th.accent}20` }}>
+              <LucideIcon name={it.icon} size={16} color={th.accent} />
+            </div>
+            <div>
+              <p className="text-[13px] font-semibold" style={{ color: th.text }}>{it.title}</p>
+              <p className="text-[12px] mt-0.5 leading-snug" style={{ color: th.textMuted }}>{it.body}</p>
+            </div>
           </div>
         </Card>
       ))}
     </div>
   );
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
