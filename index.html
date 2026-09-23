@@ -11,12 +11,13 @@
   <meta name="color-scheme" content="light" />
   <meta name="mobile-web-app-capable" content="yes" />
 
-  <!-- CDNs Esenciales -->
+  <!-- CDNs de Estilos y Librerías Externas -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
@@ -25,14 +26,15 @@
     body {
       margin: 0; padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #F8F9FA; -webkit-tap-highlight-color: transparent;
+      background-color: #F8F9FA;
+      -webkit-tap-highlight-color: transparent;
     }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- Cargamos el archivo script de la aplicación -->
+  <!-- Carga del código ejecutable adaptado -->
   <script type="text/babel" src="./app.jsx"></script>
 </body>
 </html>
